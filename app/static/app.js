@@ -1933,12 +1933,14 @@ async function sendChatMessage(message) {
 
                 if (payload.type === 'text') {
                     if (payload.partial) {
+                        // Partial = streaming delta — accumulate chunks
                         if (hadToolCallInTurn && !lastToolResponseSeen) {
-                            narrationBuffer = payload.content || narrationBuffer;
+                            narrationBuffer += payload.content || '';
                         } else {
-                            currentResponseText = payload.content || currentResponseText;
+                            currentResponseText += payload.content || '';
                         }
                     } else {
+                        // Non-partial = complete final text — use as-is
                         if (hadToolCallInTurn && !lastToolResponseSeen) {
                             narrationBuffer = payload.content || narrationBuffer;
                         } else {
