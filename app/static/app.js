@@ -1933,18 +1933,17 @@ async function sendChatMessage(message) {
 
                 if (payload.type === 'text') {
                     if (payload.partial) {
-                        // Partial = streaming delta — accumulate chunks
+                        // Partial = streaming delta — accumulate into chat always
+                        currentResponseText += payload.content || '';
+                        // Also track in narrationBuffer for reasoning tab attachment
                         if (hadToolCallInTurn && !lastToolResponseSeen) {
                             narrationBuffer += payload.content || '';
-                        } else {
-                            currentResponseText += payload.content || '';
                         }
                     } else {
                         // Non-partial = complete final text — use as-is
+                        currentResponseText = payload.content || currentResponseText;
                         if (hadToolCallInTurn && !lastToolResponseSeen) {
                             narrationBuffer = payload.content || narrationBuffer;
-                        } else {
-                            currentResponseText = payload.content || currentResponseText;
                         }
                     }
                 } else if (payload.type === 'function_call') {
@@ -1972,20 +1971,8 @@ async function sendChatMessage(message) {
                         if (!currentAgentBubble) {
                             currentAgentBubble = createAgentBubble(payload.author);
                         }
-                        let finalText = currentResponseText;
-                        if (hadToolCallInTurn && lastToolResponseSeen) {
-                            const parts = currentResponseText
-                                .split(/\n\s*\n/)
-                                .map(p => p.trim())
-                                .filter(Boolean);
-                            if (parts.length > 1) {
-                                const reasoningText = parts.slice(0, -1).join('\n\n');
-                                attachNarrationToLastAction(reasoningText);
-                                finalText = parts[parts.length - 1];
-                            }
-                        }
-                        streamTextToBubble(currentAgentBubble, finalText, () => {
-                            replayEvents.push({ type: 'assistant', text: finalText, author: payload.author });
+                        streamTextToBubble(currentAgentBubble, currentResponseText, () => {
+                            replayEvents.push({ type: 'assistant', text: currentResponseText, author: payload.author });
                         });
                     }
                     currentResponseText = '';
