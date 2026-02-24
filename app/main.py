@@ -1,4 +1,4 @@
-"""AI Social — FastAPI web application.
+"""SocialClaw — FastAPI web application.
 
 Run:
     uvicorn app.main:app --host 0.0.0.0 --port 8080
@@ -127,7 +127,7 @@ async def lifespan(app: FastAPI):
     await app.state.task_runner.stop()
 
 
-app = FastAPI(title="AI Social", lifespan=lifespan)
+app = FastAPI(title="SocialClaw", lifespan=lifespan)
 
 # API routers
 app.include_router(auth_router, prefix="/api")

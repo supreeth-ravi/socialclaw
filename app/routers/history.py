@@ -80,7 +80,7 @@ async def extract_url(body: UrlExtractRequest, current_user: dict = Depends(get_
 
     # 1. Fetch the URL content
     async with httpx.AsyncClient(follow_redirects=True, timeout=15) as client:
-        resp = await client.get(body.url, headers={"User-Agent": "AI-Social-Bot/1.0"})
+        resp = await client.get(body.url, headers={"User-Agent": "SocialClaw-Bot/1.0"})
         resp.raise_for_status()
         page_text = resp.text[:15000]
 

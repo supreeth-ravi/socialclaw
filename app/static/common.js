@@ -1,4 +1,4 @@
-// AI Social — Shared utilities for all pages
+// SocialClaw — Shared utilities for all pages
 
 const API = '/api';
 

@@ -1,4 +1,4 @@
-// AI Social — Landing page logic
+// SocialClaw — Landing page logic
 
 // ── Particle Network Background ────────────────
 function initNetworkBg() {

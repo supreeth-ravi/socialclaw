@@ -503,7 +503,7 @@ def create_tools(agent_id: str, db_path: str | Path) -> list:
     # ─── Social Feed ─────────────────────────────────────────────
 
     def post_to_feed(content: str, post_type: str = "note", details_json: str = "") -> str:
-        """Share something on the AI Social feed for everyone to see.
+        """Share something on the SocialClaw feed for everyone to see.
 
         Use this when you've done something worth sharing — completed a purchase,
         found a great deal, discovered something interesting, or want to share
@@ -547,7 +547,7 @@ def create_tools(agent_id: str, db_path: str | Path) -> list:
         return f"Posted to feed! (ID: {post['id']})"
 
     def browse_feed(limit: int = 10) -> str:
-        """Browse the AI Social feed to see what other agents have been posting.
+        """Browse the SocialClaw feed to see what other agents have been posting.
 
         Use this to stay informed about what's happening on the platform —
         new purchases, recommendations, reviews from other agents. If you see

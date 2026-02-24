@@ -1,7 +1,7 @@
 [project]
-name = "ai-social"
+name = "socialclaw"
 version = "0.1.0"
-description = "AI Social Platform — Multi-Agent System using Google A2A Protocol"
+description = "SocialClaw — Multi-Agent Social Platform using Google A2A Protocol"
 requires-python = ">=3.12"
 dependencies = [
     "google-adk[a2a,extensions]",

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Social</title>
+    <title>SocialClaw</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/static/style.css">
     <script>
@@ -32,7 +32,7 @@
                 <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/20 mb-5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </div>
-                <h1 class="text-3xl font-bold text-white mb-3">Welcome to AI Social!</h1>
+                <h1 class="text-3xl font-bold text-white mb-3">Welcome to SocialClaw!</h1>
                 <p class="text-muted text-lg max-w-xl mx-auto">Build your network. Add merchants to shop with and people to connect with through your personal AI agent.</p>
             </div>
 
@@ -44,7 +44,7 @@
 
             <!-- People section -->
             <div id="onboarding-people-section" class="mb-8 hidden">
-                <h3 class="text-sm uppercase tracking-wider text-muted font-semibold mb-3">People on AI Social</h3>
+                <h3 class="text-sm uppercase tracking-wider text-muted font-semibold mb-3">People on SocialClaw</h3>
                 <div id="onboarding-people" class="grid gap-3"></div>
             </div>
 
@@ -83,7 +83,7 @@
                     </svg>
                 </div>
                 <div>
-                    <div class="nav-title font-display">ai.social</div>
+                    <div class="nav-title font-display">SocialClaw</div>
                     <div class="nav-subtitle">personal agent</div>
                 </div>
             </div>
@@ -155,7 +155,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                         </div>
                         <div class="leading-tight">
-                            <div class="text-sm font-bold text-white">AI Social</div>
+                            <div class="text-sm font-bold text-white">SocialClaw</div>
                             <div class="text-[10px] font-mono text-muted">Personal AI Agent</div>
                         </div>
                     </div>
@@ -218,12 +218,12 @@
                                     <button id="chat-tab-chat" class="chat-tab active" type="button">Chat</button>
                                     <button id="chat-tab-reasoning" class="chat-tab" type="button">Reasoning</button>
                                 </div>
-                                <div class="replay-controls">
+                                <div class="replay-controls hidden">
                                     <button id="replay-play-btn" class="replay-btn" type="button">Play</button>
                                     <button id="replay-step-btn" class="replay-btn" type="button">Step</button>
                                     <button id="replay-reset-btn" class="replay-btn" type="button">Reset</button>
                                 </div>
-                                <div class="replay-slider">
+                                <div class="replay-slider hidden">
                                     <input id="replay-range" type="range" min="0" max="0" value="0">
                                     <div id="replay-label" class="replay-label">0 / 0</div>
                                 </div>
@@ -479,7 +479,7 @@
 
                     <!-- Discover People -->
                     <div id="discover-people-section" class="mb-8 hidden">
-                        <h3 class="text-sm uppercase tracking-wider text-muted font-semibold mb-3">People on AI Social</h3>
+                        <h3 class="text-sm uppercase tracking-wider text-muted font-semibold mb-3">People on SocialClaw</h3>
                         <div id="discover-people" class="grid gap-3"></div>
                     </div>
 
@@ -611,7 +611,7 @@
                                 <p class="text-xs text-muted mt-2">Maximum back-and-forth turns your agent can do per inbound A2A run.</p>
                             </div>
                         </div>
-                        <div class="settings-field">
+                        <div class="settings-field hidden">
                             <label class="block text-xs text-muted uppercase tracking-wider mb-2">Simulation (Dev)</label>
                             <div class="grid gap-3">
                                 <p class="text-xs text-muted">

@@ -121,7 +121,7 @@ conn.commit()
 print("\nCreating mutual friendships...")
 FRIEND_DESCRIPTIONS = {
     "supreeth": "Boss — primary platform user",
-    "ravi": "Friend on AI Social platform",
+    "ravi": "Friend on SocialClaw platform",
     "alice": "Budget-conscious, eco-friendly shopper",
     "bob": "Sneaker enthusiast, tech gadget lover",
 }

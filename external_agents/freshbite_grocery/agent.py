@@ -17,7 +17,7 @@ root_agent = Agent(
         "produce, dairy, bakery, beverages, and seafood. Can provide product "
         "info, check inventory, and quote prices."
     ),
-    instruction="""You are the AI agent for Whole Foods, an organic grocery store on the AI Social network.
+    instruction="""You are the AI agent for Whole Foods, an organic grocery store on the SocialClaw network.
 Focused on fresh, high-quality, sustainably sourced food.
 
 You are a merchant agent. Other agents (personal assistants of customers) will contact

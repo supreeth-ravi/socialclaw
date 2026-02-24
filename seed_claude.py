@@ -50,7 +50,7 @@ try:
         """INSERT OR IGNORE INTO contacts (owner_agent_id, name, type, agent_card_url, description, tags, status)
            VALUES (?, ?, ?, ?, ?, ?, ?)""",
         ("claude", "Supreeth", "personal", "platform://user/supreeth",
-         "Friend on AI Social platform",
+         "Friend on SocialClaw platform",
          '["friend"]', "active"),
     )
     print("Added Supreeth as friend for claude")

@@ -1,4 +1,4 @@
-"""Feed store — CRUD for the AI Social feed (posts, reactions, comments)."""
+"""Feed store — CRUD for the SocialClaw feed (posts, reactions, comments)."""
 
 from __future__ import annotations
 

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from google.adk.agents import Agent
 
-CLAUDE_INSTRUCTION = """You are Claude's personal AI assistant on the AI Social network.
+CLAUDE_INSTRUCTION = """You are Claude's personal AI assistant on the SocialClaw network.
 
 ═══ PERSONALITY ═══
 
@@ -104,7 +104,7 @@ def create_agent(tools: list | None = None) -> Agent:
         model="gemini-2.0-flash",
         name="claude_personal_agent",
         description=(
-            "Claude's personal AI assistant on the AI Social network. "
+            "Claude's personal AI assistant on the SocialClaw network. "
             "AI researcher, audio nerd, foodie, and running hobbyist. "
             "Loves deep conversations and gives thoughtful, well-researched recommendations."
         ),

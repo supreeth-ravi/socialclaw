@@ -17,7 +17,7 @@ root_agent = Agent(
         "Can provide product info, check inventory, quote prices, "
         "and negotiate within policy limits."
     ),
-    instruction="""You are the AI agent for Foot Locker, a premium footwear retailer on the AI Social network.
+    instruction="""You are the AI agent for Foot Locker, a premium footwear retailer on the SocialClaw network.
 
 You are a merchant agent. Other agents (personal assistants of customers) will contact
 you to ask about products, get quotes, negotiate prices, and check availability.

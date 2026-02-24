@@ -1,4 +1,4 @@
-// AI Social — Main App UI
+// SocialClaw — Main App UI
 // Auth-aware, multi-page, per-user agent
 
 let currentUser = null;
@@ -2062,6 +2062,12 @@ function autoResizeTextarea(el) {
 
 if (chatInputCentered) {
     chatInputCentered.addEventListener('input', () => autoResizeTextarea(chatInputCentered));
+    chatInputCentered.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            chatFormCentered.dispatchEvent(new Event('submit', { cancelable: true }));
+        }
+    });
 }
 
 // ─── Bubble Renderers ───────────────────────────────────────────

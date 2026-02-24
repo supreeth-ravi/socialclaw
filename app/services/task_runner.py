@@ -105,7 +105,7 @@ RULES:
 - NEVER say "I'll wait for their response" — you already have it.
 """
 
-_FEED_ENGAGEMENT_PROMPT = """You have a FEED ENGAGEMENT task — time to check the AI Social feed and interact with posts.
+_FEED_ENGAGEMENT_PROMPT = """You have a FEED ENGAGEMENT task — time to check the SocialClaw feed and interact with posts.
 
 HOW TO DO THIS:
 

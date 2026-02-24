@@ -1,4 +1,4 @@
-// AI Social — Auth page logic
+// SocialClaw — Auth page logic
 
 const tabSignup = document.getElementById('tab-signup');
 const tabLogin = document.getElementById('tab-login');

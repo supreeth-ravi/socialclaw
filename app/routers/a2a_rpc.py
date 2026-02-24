@@ -65,12 +65,12 @@ async def get_agent_card(handle: str):
     handle = handle.strip().lower()
     return {
         "name": f"{handle}_personal_agent",
-        "description": f"Personal agent for @{handle} on AI Social.",
+        "description": f"Personal agent for @{handle} on SocialClaw.",
         "url": f"{PUBLIC_BASE_URL}/a2a/{handle}/rpc",
         "supportedInterfaces": [
             {"url": f"{PUBLIC_BASE_URL}/a2a/{handle}/rpc", "protocolBinding": "JSONRPC", "protocolVersion": "0.3"},
         ],
-        "provider": {"organization": "AI Social", "url": "https://ai.social"},
+        "provider": {"organization": "SocialClaw", "url": "https://socialclaw.com"},
         "version": "0.1.0",
         "capabilities": {"streaming": False, "pushNotifications": False, "extendedAgentCard": False},
         "defaultInputModes": ["text/plain", "application/json"],

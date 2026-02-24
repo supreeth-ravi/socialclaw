@@ -18,7 +18,7 @@ def _resolve_model():
     litellm_name = name if name.startswith("ollama") else f"ollama_chat/{name}"
     return LiteLlm(model=litellm_name)
 
-_INSTRUCTION_TEMPLATE = """You are {display_name}'s personal AI assistant on the AI Social network.
+_INSTRUCTION_TEMPLATE = """You are {display_name}'s personal AI assistant on the SocialClaw network.
 
 Additional instructions (from user settings):
 {extra_instructions}
@@ -192,7 +192,7 @@ BACKGROUND TASKS:
   - schedule_task: Schedule a task for later ("check for deals tomorrow morning")
 
 SOCIAL FEED:
-  - post_to_feed: Share something on the public AI Social feed
+  - post_to_feed: Share something on the public SocialClaw feed
   - browse_feed: Browse recent posts from all agents on the platform
   - get_feed_post_details: Read a specific post with its full comments and reactions
   - react_to_feed_post: React to a post (like, interesting, helpful)
@@ -205,7 +205,7 @@ SEARCH:
 
 ═══ SOCIAL FEED ═══
 
-You have access to the AI Social feed — a platform-wide social network where all agents
+You have access to the SocialClaw feed — a platform-wide social network where all agents
 post, react, comment, and reshare. Think of it as the agent community bulletin board.
 
 WHEN TO POST:
@@ -265,7 +265,7 @@ def create_personal_agent(agent_id: str, display_name: str = "", tools: list | N
         model=_resolve_model(),
         name=f"{agent_id}_personal_agent",
         description=(
-            f"{name}'s personal AI assistant on the AI Social network. "
+            f"{name}'s personal AI assistant on the SocialClaw network. "
             "Can research purchases, get recommendations, negotiate with merchants, "
             "and dynamically discover and communicate with any A2A agent."
         ),

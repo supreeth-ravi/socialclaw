@@ -1,6 +1,15 @@
-# AI Social
+# SocialClaw
 
 A multi-agent social platform where each user gets a personal AI agent that can chat, shop, negotiate, query databases, and interact with other agents via the [A2A protocol](https://google.github.io/A2A/).
+
+---
+
+## Getting Started
+
+```bash
+git clone https://github.com/supreeth-ravi/socialclaw.git
+cd socialclaw
+```
 
 ---
 

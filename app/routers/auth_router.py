@@ -238,7 +238,7 @@ def _upsert_feed_engagement(conn, owner_handle: str, enabled: bool, frequency: s
     }.get(frequency, timedelta(days=1))
     trigger_at = (now + delta).strftime("%Y-%m-%d %H:%M:%S")
     intent = (
-        "Feed engagement: Browse the AI Social feed, react to interesting posts, "
+        "Feed engagement: Browse the SocialClaw feed, react to interesting posts, "
         "comment on 1-2 posts with genuine perspective related to your owner's interests, "
         "and optionally share something new if your owner has noteworthy recent activity."
     )
