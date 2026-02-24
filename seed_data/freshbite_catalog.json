@@ -1,0 +1,62 @@
+[
+  {
+    "id": "FB001",
+    "name": "Organic Avocado Box (6)",
+    "category": "produce",
+    "description": "Six perfectly ripe organic Hass avocados from local farms.",
+    "price": 12.00,
+    "min_price": 10.00,
+    "in_stock": true,
+    "specs": { "origin": "California", "organic": true, "quantity": 6 },
+    "rating": 4.5,
+    "reviews_summary": "Always fresh and perfectly ripe. Great value for organic avocados."
+  },
+  {
+    "id": "FB002",
+    "name": "Free-Range Eggs (dozen)",
+    "category": "dairy",
+    "description": "Farm-fresh free-range eggs from pasture-raised hens.",
+    "price": 8.50,
+    "min_price": 7.00,
+    "in_stock": true,
+    "specs": { "origin": "Local Farm", "free_range": true, "quantity": 12 },
+    "rating": 4.7,
+    "reviews_summary": "Rich yolks and great taste. You can tell the difference from store-bought."
+  },
+  {
+    "id": "FB003",
+    "name": "Artisan Sourdough Bread",
+    "category": "bakery",
+    "description": "Hand-crafted sourdough with 24-hour fermentation. Crusty outside, soft inside.",
+    "price": 7.00,
+    "min_price": 6.00,
+    "in_stock": true,
+    "specs": { "weight": "1 lb", "ingredients": ["organic flour", "water", "salt", "starter"], "allergens": ["gluten"] },
+    "rating": 4.8,
+    "reviews_summary": "Best sourdough in town. Perfect crust and tangy flavor."
+  },
+  {
+    "id": "FB004",
+    "name": "Cold-Pressed Green Juice (6-pack)",
+    "category": "beverages",
+    "description": "Nutrient-packed cold-pressed juice with kale, spinach, apple, ginger, and lemon.",
+    "price": 24.00,
+    "min_price": 20.00,
+    "in_stock": true,
+    "specs": { "volume": "12 oz each", "quantity": 6, "organic": true, "shelf_life": "5 days" },
+    "rating": 4.4,
+    "reviews_summary": "Tastes fresh and energizing. Great way to start the morning."
+  },
+  {
+    "id": "FB005",
+    "name": "Wild-Caught Salmon Fillet (lb)",
+    "category": "seafood",
+    "description": "Premium wild-caught Alaskan salmon, sustainably sourced.",
+    "price": 18.00,
+    "min_price": 15.00,
+    "in_stock": true,
+    "specs": { "origin": "Alaska", "wild_caught": true, "weight": "1 lb", "sustainability": "MSC Certified" },
+    "rating": 4.9,
+    "reviews_summary": "Incredible quality. Tastes like it was just caught. Best salmon available."
+  }
+]

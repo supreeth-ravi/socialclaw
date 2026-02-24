@@ -1,0 +1,62 @@
+[
+  {
+    "id": "SS001",
+    "name": "Nike Air Max 90",
+    "category": "lifestyle",
+    "description": "Iconic lifestyle sneaker with visible Air cushioning and retro design.",
+    "price": 130.00,
+    "min_price": 105.00,
+    "in_stock": true,
+    "specs": { "sizes": ["8","9","10","11","12"], "colors": ["White/Black","Triple White","Infrared"], "material": "Leather/Mesh" },
+    "rating": 4.5,
+    "reviews_summary": "Customers love the classic design. Very comfortable for daily wear."
+  },
+  {
+    "id": "SS002",
+    "name": "Adidas Ultraboost 23",
+    "category": "running",
+    "description": "High-performance running shoe with Boost midsole for energy return.",
+    "price": 180.00,
+    "min_price": 145.00,
+    "in_stock": true,
+    "specs": { "sizes": ["8","9","10","11","12"], "colors": ["Core Black","Cloud White","Solar Red"], "material": "Primeknit" },
+    "rating": 4.7,
+    "reviews_summary": "Top-tier running shoe. Excellent cushioning and responsiveness."
+  },
+  {
+    "id": "SS003",
+    "name": "New Balance 990v6",
+    "category": "lifestyle",
+    "description": "Premium made-in-USA lifestyle shoe with superior comfort.",
+    "price": 200.00,
+    "min_price": 170.00,
+    "in_stock": true,
+    "specs": { "sizes": ["8","9","10","11","12"], "colors": ["Grey","Navy","Black"], "material": "Pigskin/Mesh" },
+    "rating": 4.8,
+    "reviews_summary": "The gold standard of comfort. Worth every penny."
+  },
+  {
+    "id": "SS004",
+    "name": "Nike Pegasus 41",
+    "category": "running",
+    "description": "Versatile daily running shoe with React foam and Air Zoom unit.",
+    "price": 140.00,
+    "min_price": 112.00,
+    "in_stock": true,
+    "specs": { "sizes": ["8","9","10","11","12"], "colors": ["Black/White","Blue/Orange","Green"], "material": "Engineered Mesh" },
+    "rating": 4.4,
+    "reviews_summary": "Great all-around running shoe. Reliable and comfortable."
+  },
+  {
+    "id": "SS005",
+    "name": "Adidas Samba OG",
+    "category": "lifestyle",
+    "description": "Classic indoor soccer shoe turned lifestyle icon.",
+    "price": 100.00,
+    "min_price": 85.00,
+    "in_stock": false,
+    "specs": { "sizes": ["8","9","10","11"], "colors": ["White/Black","Core Black","Collegiate Green"], "material": "Full-grain Leather" },
+    "rating": 4.6,
+    "reviews_summary": "Timeless style. Goes with everything. Sells out fast."
+  }
+]

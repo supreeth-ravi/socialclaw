@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": "2025-11-10T09:00:00Z",
+    "type": "purchase",
+    "summary": "Bought Adidas Samba OG from SoleStyle Shoes for $95. Great casual shoe.",
+    "details": { "product": "Adidas Samba OG", "size": "8", "color": "White/Black", "original_price": 100, "final_price": 95 },
+    "contacts_involved": ["SoleStyle Shoes"],
+    "sentiment": "positive"
+  },
+  {
+    "timestamp": "2025-12-20T11:00:00Z",
+    "type": "inquiry",
+    "summary": "Asked Bob about good running shoes. He recommended Nike Pegasus and Adidas Ultraboost.",
+    "details": { "category": "running_shoes", "recommendations": ["Nike Pegasus", "Adidas Ultraboost"] },
+    "contacts_involved": ["Bob"],
+    "sentiment": "positive"
+  },
+  {
+    "timestamp": "2026-01-15T14:00:00Z",
+    "type": "purchase",
+    "summary": "Bought AirPods Pro 3 from TechMart Electronics for $240.",
+    "details": { "product": "Apple AirPods Pro 3", "original_price": 249, "final_price": 240 },
+    "contacts_involved": ["TechMart Electronics"],
+    "sentiment": "positive"
+  }
+]

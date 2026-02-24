@@ -1,0 +1,62 @@
+[
+  {
+    "id": "TM001",
+    "name": "iPhone 16 Pro",
+    "category": "smartphones",
+    "description": "Latest Apple flagship with A18 Pro chip, titanium design, and advanced camera system.",
+    "price": 999.00,
+    "min_price": 920.00,
+    "in_stock": true,
+    "specs": { "storage": ["128GB","256GB","512GB","1TB"], "colors": ["Natural Titanium","Blue Titanium","White Titanium","Black Titanium"], "display": "6.3-inch Super Retina XDR" },
+    "rating": 4.7,
+    "reviews_summary": "Excellent camera and performance. Best iPhone yet."
+  },
+  {
+    "id": "TM002",
+    "name": "Samsung Galaxy S25",
+    "category": "smartphones",
+    "description": "Samsung's flagship with Snapdragon 8 Elite, Galaxy AI, and stunning display.",
+    "price": 899.00,
+    "min_price": 810.00,
+    "in_stock": true,
+    "specs": { "storage": ["128GB","256GB","512GB"], "colors": ["Phantom Black","Cream","Icy Blue","Mint"], "display": "6.2-inch Dynamic AMOLED" },
+    "rating": 4.6,
+    "reviews_summary": "Great AI features and smooth performance. Excellent display."
+  },
+  {
+    "id": "TM003",
+    "name": "MacBook Air M4",
+    "category": "laptops",
+    "description": "Ultra-thin laptop with Apple M4 chip, all-day battery life, and Liquid Retina display.",
+    "price": 1199.00,
+    "min_price": 1080.00,
+    "in_stock": true,
+    "specs": { "ram": ["16GB","24GB"], "storage": ["256GB","512GB","1TB"], "colors": ["Midnight","Starlight","Space Gray","Silver"], "display": "13.6-inch Liquid Retina" },
+    "rating": 4.8,
+    "reviews_summary": "Best ultrabook on the market. Incredible battery life and performance."
+  },
+  {
+    "id": "TM004",
+    "name": "Sony WH-1000XM6",
+    "category": "headphones",
+    "description": "Premium noise-cancelling headphones with 40-hour battery and Hi-Res Audio.",
+    "price": 349.00,
+    "min_price": 290.00,
+    "in_stock": true,
+    "specs": { "colors": ["Black","Silver","Midnight Blue"], "battery": "40 hours", "driver": "40mm", "connectivity": "Bluetooth 5.3" },
+    "rating": 4.8,
+    "reviews_summary": "Best noise cancellation in the market. Incredibly comfortable for long sessions."
+  },
+  {
+    "id": "TM005",
+    "name": "Apple AirPods Pro 3",
+    "category": "earbuds",
+    "description": "True wireless earbuds with adaptive noise cancellation and spatial audio.",
+    "price": 249.00,
+    "min_price": 220.00,
+    "in_stock": true,
+    "specs": { "colors": ["White"], "battery": "6 hours (30 with case)", "connectivity": "Bluetooth 5.3", "features": ["ANC","Transparency Mode","Spatial Audio"] },
+    "rating": 4.6,
+    "reviews_summary": "Seamless Apple ecosystem integration. Great sound quality and ANC."
+  }
+]

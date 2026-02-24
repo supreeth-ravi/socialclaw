@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Alice",
+    "type": "personal",
+    "agent_card_url": "http://localhost:8001/.well-known/agent-card.json",
+    "description": "Friend who is budget-conscious and values eco-friendly products",
+    "tags": ["friend", "eco-friendly"]
+  },
+  {
+    "name": "Bob",
+    "type": "personal",
+    "agent_card_url": "http://localhost:8002/.well-known/agent-card.json",
+    "description": "Sneaker enthusiast and tech gadget lover",
+    "tags": ["friend", "sneakers", "tech"]
+  },
+  {
+    "name": "SoleStyle Shoes",
+    "type": "merchant",
+    "agent_card_url": "http://localhost:8010/.well-known/agent-card.json",
+    "description": "Premium footwear retailer with Nike, Adidas, New Balance",
+    "tags": ["shoes", "footwear", "merchant"]
+  },
+  {
+    "name": "TechMart Electronics",
+    "type": "merchant",
+    "agent_card_url": "http://localhost:8011/.well-known/agent-card.json",
+    "description": "Electronics retailer with phones, laptops, accessories",
+    "tags": ["electronics", "tech", "merchant"]
+  },
+  {
+    "name": "FreshBite Grocery",
+    "type": "merchant",
+    "agent_card_url": "http://localhost:8012/.well-known/agent-card.json",
+    "description": "Organic grocery store with fresh produce and health foods",
+    "tags": ["grocery", "food", "organic", "merchant"]
+  }
+]

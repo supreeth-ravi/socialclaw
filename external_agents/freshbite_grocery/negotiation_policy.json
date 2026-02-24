@@ -1,0 +1,7 @@
+{
+  "max_discount_first_interaction_pct": 10,
+  "max_discount_bulk_pct": 15,
+  "competitor_price_match": false,
+  "max_rounds": 2,
+  "notes": "Perishable goods have limited negotiation room. Focus on freshness and quality."
+}

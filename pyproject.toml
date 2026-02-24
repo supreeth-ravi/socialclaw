@@ -1,0 +1,31 @@
+[project]
+name = "ai-social"
+version = "0.1.0"
+description = "AI Social Platform — Multi-Agent System using Google A2A Protocol"
+requires-python = ">=3.12"
+dependencies = [
+    "google-adk[a2a,extensions]",
+    "uvicorn[standard]",
+    "httpx",
+    "pydantic>=2.0",
+    "python-dotenv",
+    "fastapi",
+    "pydantic-settings",
+    "PyJWT>=2.8",
+    "bcrypt>=4.0",
+    "litellm>=1.80.16",
+    "pymssql>=2.3.13",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["common", "personal_agents", "app"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

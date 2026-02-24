@@ -1,0 +1,7 @@
+{
+  "max_discount_first_interaction_pct": 10,
+  "max_discount_bulk_pct": 15,
+  "competitor_price_match": true,
+  "max_rounds": 3,
+  "notes": "Never go below min_price. Be friendly but firm."
+}

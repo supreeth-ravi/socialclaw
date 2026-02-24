@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 210 20% 92%;
+    --card: 220 18% 7%;
+    --card-foreground: 210 20% 92%;
+    --popover: 220 18% 7%;
+    --popover-foreground: 210 20% 92%;
+    --primary: 160 80% 55%;
+    --primary-foreground: 220 20% 4%;
+    --secondary: 220 14% 12%;
+    --secondary-foreground: 210 15% 75%;
+    --muted: 220 14% 10%;
+    --muted-foreground: 215 12% 50%;
+    --accent: 200 70% 50%;
+    --accent-foreground: 220 20% 4%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 14% 14%;
+    --input: 220 14% 14%;
+    --ring: 160 80% 55%;
+    --chart-1: 160 80% 55%;
+    --chart-2: 200 70% 50%;
+    --chart-3: 35 90% 60%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.75rem;
+    --sidebar-background: 220 18% 6%;
+    --sidebar-foreground: 210 20% 92%;
+    --sidebar-primary: 160 80% 55%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 220 14% 12%;
+    --sidebar-accent-foreground: 210 15% 75%;
+    --sidebar-border: 220 14% 14%;
+    --sidebar-ring: 160 80% 55%;
+
+    --agent-cyan: 185 75% 55%;
+    --agent-emerald: 160 80% 55%;
+    --agent-amber: 35 90% 60%;
+    --agent-rose: 350 75% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typing-dot {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-4px); }
+}
+
+.animate-float-in {
+  animation: float-in 0.4s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.typing-dot-1 { animation: typing-dot 1.4s ease-in-out infinite 0s; }
+.typing-dot-2 { animation: typing-dot 1.4s ease-in-out infinite 0.2s; }
+.typing-dot-3 { animation: typing-dot 1.4s ease-in-out infinite 0.4s; }
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: hsl(220 14% 20%);
+  border-radius: 9999px;
+}
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(220, 14%, 20%) transparent;
+}
