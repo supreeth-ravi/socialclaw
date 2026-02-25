@@ -21,6 +21,12 @@ const params = new URLSearchParams(window.location.search);
 const preHandle = params.get('handle') || '';
 signupHandle.value = preHandle;
 
+// Sanitize handle input — letters, numbers, underscores only, must start with letter
+signupHandle.addEventListener('input', () => {
+    const raw = signupHandle.value.replace(/[^a-zA-Z0-9_]/g, '');
+    signupHandle.value = raw;
+});
+
 // If handle present, default to signup tab; otherwise login
 function showTab(tab) {
     if (tab === 'signup') {
@@ -43,8 +49,8 @@ if (preHandle) {
     showTab('signup');
     signupEmail.focus();
 } else {
-    showTab('login');
-    loginEmail.focus();
+    showTab('signup');
+    signupHandle.focus();
 }
 
 function onSuccess(data) {
