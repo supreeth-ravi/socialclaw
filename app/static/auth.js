@@ -64,6 +64,23 @@ signupForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     signupError.classList.add('hidden');
 
+    const handle = signupHandle.value.trim();
+    if (!handle) {
+        signupError.textContent = 'Handle is required';
+        signupError.classList.remove('hidden');
+        return;
+    }
+    if (!/^[a-zA-Z]/.test(handle)) {
+        signupError.textContent = 'Handle must start with a letter';
+        signupError.classList.remove('hidden');
+        return;
+    }
+    if (handle.length < 3) {
+        signupError.textContent = 'Handle must be at least 3 characters';
+        signupError.classList.remove('hidden');
+        return;
+    }
+
     if (signupPassword.value !== signupConfirm.value) {
         signupError.textContent = 'Passwords do not match';
         signupError.classList.remove('hidden');
