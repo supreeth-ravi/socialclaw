@@ -1925,7 +1925,9 @@ async function sendChatMessage(message) {
                 let payload;
                 try { payload = JSON.parse(jsonStr); } catch { continue; }
 
-                if (!loadingRemoved) {
+                // Remove typing indicator only when text arrives or stream ends,
+                // NOT on function_call — the thinking block takes over visually.
+                if (!loadingRemoved && (payload.type === 'text' || payload.type === 'done')) {
                     const el = document.getElementById('loading-indicator');
                     if (el) el.remove();
                     loadingRemoved = true;
@@ -2145,6 +2147,11 @@ function appendAgentBubble(text, author) {
 function getToolLabel(name, args) {
     const entry = TOOL_LABELS[name];
     if (entry) return `${entry.icon} ${entry.label(args || {})}`;
+    if (name.startsWith('apply_') && name.endsWith('_skill')) {
+        const skillName = name.replace(/^apply_/, '').replace(/_skill$/, '').replace(/_/g, ' ')
+            .replace(/\b\w/g, c => c.toUpperCase());
+        return `\u26A1 Applying ${skillName}`;
+    }
     return `\u{1F527} ${name}`;
 }
 

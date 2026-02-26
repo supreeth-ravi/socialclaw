@@ -31,6 +31,7 @@ A2A_MAX_TURNS: int = int(os.getenv("A2A_MAX_TURNS", "3"))
 
 # Model
 MODEL_NAME: str = os.getenv("MODEL_NAME", "gemini-2.0-flash")
+OPENROUTER_API_KEY: str = os.getenv("OPENROUTER_API_KEY", "")
 OLLAMA_API_BASE: str = os.getenv("OLLAMA_API_BASE", "http://localhost:11434")
 
 # Composio

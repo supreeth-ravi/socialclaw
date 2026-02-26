@@ -74,9 +74,8 @@ async def update_history(
 
 @router.post("/history/extract-url")
 async def extract_url(body: UrlExtractRequest, current_user: dict = Depends(get_current_user)):
-    """Fetch a URL, extract key facts via Gemini, store as multiple memory entries."""
+    """Fetch a URL, extract key facts via the configured model, and store as memory entries."""
     import httpx
-    from google import genai
 
     # 1. Fetch the URL content
     async with httpx.AsyncClient(follow_redirects=True, timeout=15) as client:
@@ -84,8 +83,9 @@ async def extract_url(body: UrlExtractRequest, current_user: dict = Depends(get_
         resp.raise_for_status()
         page_text = resp.text[:15000]
 
-    # 2. Use Gemini to extract structured facts
-    gemini = genai.Client()
+    # 2. Use the configured model (via LiteLLM) to extract structured facts
+    from litellm import completion as litellm_completion
+    from common.model import _litellm_model_name
     extraction_prompt = (
         f"Extract key facts from this webpage about a person or merchant.\n"
         f"Context hint: {body.context}\n"
@@ -98,13 +98,14 @@ async def extract_url(body: UrlExtractRequest, current_user: dict = Depends(get_
         '- "visibility": "sharable"\n'
         "Extract 3-8 distinct, useful facts. Return ONLY the JSON array, no markdown."
     )
-    result = gemini.models.generate_content(
-        model="gemini-2.0-flash",
-        contents=extraction_prompt,
+    litellm_result = litellm_completion(
+        model=_litellm_model_name(),
+        messages=[{"role": "user", "content": extraction_prompt}],
     )
+    result_text = litellm_result.choices[0].message.content
 
     # 3. Parse and store each fact
-    raw = result.text.strip()
+    raw = result_text.strip()
     if raw.startswith("```"):
         raw = raw.split("\n", 1)[1].rsplit("```", 1)[0]
     facts = json_mod.loads(raw)

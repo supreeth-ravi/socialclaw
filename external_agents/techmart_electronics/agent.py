@@ -1,4 +1,5 @@
 from google.adk.agents import Agent
+from common.model import resolve_model as _resolve_model
 
 from .tools import (
     check_inventory,
@@ -10,7 +11,7 @@ from .tools import (
 )
 
 root_agent = Agent(
-    model="gemini-2.0-flash",
+    model=_resolve_model(),
     name="techmart_electronics_agent",
     description=(
         "Best Buy merchant agent. Sells phones, laptops, "

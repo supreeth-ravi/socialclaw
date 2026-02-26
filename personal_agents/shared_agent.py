@@ -3,20 +3,9 @@ workflow/tools as Priya but without a hardcoded persona."""
 
 from __future__ import annotations
 
-import os
-
 from google.adk.agents import Agent
 
-
-def _resolve_model():
-    """Return a model identifier for ADK — Gemini string or LiteLlm wrapper for Ollama."""
-    name = os.getenv("MODEL_NAME", "gemini-2.0-flash")
-    if name.startswith("gemini"):
-        return name
-    # Everything else is treated as an Ollama model via LiteLLM
-    from google.adk.models.lite_llm import LiteLlm
-    litellm_name = name if name.startswith("ollama") else f"ollama_chat/{name}"
-    return LiteLlm(model=litellm_name)
+from common.model import resolve_model as _resolve_model
 
 _INSTRUCTION_TEMPLATE = """You are {display_name}'s personal AI assistant on the SocialClaw network.
 
@@ -250,16 +239,38 @@ AUTONOMY:
 """
 
 
-def create_personal_agent(agent_id: str, display_name: str = "", tools: list | None = None, extra_instructions: str = "") -> Agent:
+def create_personal_agent(
+    agent_id: str,
+    display_name: str = "",
+    tools: list | None = None,
+    extra_instructions: str = "",
+    skill_content: str = "",
+    skill_tools_info: list | None = None,
+) -> Agent:
     """Create a generic personal agent for a user.
 
     Args:
         agent_id: The user's handle, used as agent name.
         display_name: Friendly name to template into the instruction.
         tools: List of tool functions (from shared_tools.create_tools).
+        skill_content: (Legacy) Concatenated SKILL.md content from enabled skills.
+        skill_tools_info: List of (skill_name, fn_name) tuples for skill tools.
     """
     name = display_name or agent_id
     instruction = _INSTRUCTION_TEMPLATE.format(display_name=name, extra_instructions=extra_instructions or "None")
+    if skill_tools_info:
+        lines = [
+            f"- **{skill_name}**: call `{fn_name}()` to get detailed guidelines"
+            for skill_name, fn_name in skill_tools_info
+        ]
+        instruction += (
+            f"\n\n═══ INSTALLED SKILLS ═══\n"
+            f"You have the following skills available as tools. When a user request relates to "
+            f"a skill's domain, call the skill tool FIRST to retrieve its guidelines, then apply them:\n"
+            + "\n".join(lines)
+        )
+    elif skill_content:
+        instruction += f"\n\n═══ INSTALLED SKILLS ═══\nThe following skills have been installed and activated for {name}. Apply them when relevant.\n{skill_content}"
 
     return Agent(
         model=_resolve_model(),

@@ -28,6 +28,7 @@ from .routers.auth_router import router as auth_router
 from .routers.feed import router as feed_router
 from .routers.platform import router as platform_router
 from .routers.integrations import router as integrations_router
+from .routers.skills import router as skills_router
 
 logger = logging.getLogger(__name__)
 
@@ -93,6 +94,11 @@ async def lifespan(app: FastAPI):
     # Seed platform agents
     _seed_platform_agents()
 
+    # Seed skills catalog
+    from .services.skill_service import seed_skills_catalog
+    seed_skills_catalog()
+    logger.info("Skills catalog ready")
+
     # Empty runner pool — runners created lazily per user
     app.state.runners = {}
 
@@ -142,6 +148,7 @@ app.include_router(schedule.router, prefix="/api")
 app.include_router(history_router, prefix="/api")
 app.include_router(feed_router, prefix="/api")
 app.include_router(integrations_router, prefix="/api")
+app.include_router(skills_router, prefix="/api")
 app.include_router(a2a_inbound_router, prefix="/api")
 app.include_router(debug_router, prefix="/api")
 app.include_router(a2a_rpc_router)
@@ -165,3 +172,8 @@ async def auth_page():
 @app.get("/app")
 async def app_page():
     return FileResponse(str(STATIC_DIR / "app.html"))
+
+
+@app.get("/skills")
+async def skills_page():
+    return FileResponse(str(STATIC_DIR / "skills.html"))

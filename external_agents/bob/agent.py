@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from google.adk.agents import Agent
+from common.model import resolve_model as _resolve_model
 
 BOB_INSTRUCTION = """You are Arjun's personal AI assistant on the SocialClaw network.
 
@@ -100,7 +101,7 @@ def create_agent(tools: list | None = None) -> Agent:
         ]
 
     return Agent(
-        model="gemini-2.0-flash",
+        model=_resolve_model(),
         name="bob_personal_agent",
         description=(
             "Arjun's personal AI assistant on the SocialClaw network. "

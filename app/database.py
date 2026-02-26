@@ -183,6 +183,32 @@ CREATE TABLE IF NOT EXISTS user_integrations (
     updated_at       TEXT DEFAULT (datetime('now')),
     UNIQUE(user_handle, integration_type)
 );
+
+CREATE TABLE IF NOT EXISTS skills_catalog (
+    slug             TEXT PRIMARY KEY,
+    name             TEXT NOT NULL,
+    description      TEXT DEFAULT '',
+    category         TEXT DEFAULT '',
+    tags_json        TEXT DEFAULT '[]',
+    icon             TEXT DEFAULT '🔧',
+    readme_url       TEXT DEFAULT '',
+    content          TEXT DEFAULT '',
+    requires_env_json TEXT DEFAULT '[]',
+    downloads        INTEGER DEFAULT 0,
+    source           TEXT DEFAULT 'clawhub',
+    created_at       TEXT DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS user_skills (
+    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_handle  TEXT NOT NULL,
+    skill_slug   TEXT NOT NULL,
+    enabled      BOOLEAN DEFAULT 1,
+    config_json  TEXT DEFAULT '{}',
+    installed_at TEXT DEFAULT (datetime('now')),
+    UNIQUE(user_handle, skill_slug)
+);
+CREATE INDEX IF NOT EXISTS idx_user_skills_handle ON user_skills(user_handle, enabled);
 """
 
 

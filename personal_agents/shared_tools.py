@@ -12,9 +12,14 @@ import logging
 import re
 from pathlib import Path
 
-from google.adk.tools.google_search_tool import GoogleSearchTool
+import os as _os
 
-google_search = GoogleSearchTool(bypass_multi_tools_limit=True)
+_MODEL_NAME = _os.getenv("MODEL_NAME", "gemini-2.0-flash")
+if _MODEL_NAME.startswith("gemini"):
+    from google.adk.tools.google_search_tool import GoogleSearchTool
+    google_search = GoogleSearchTool(bypass_multi_tools_limit=True)
+else:
+    google_search = None
 
 from common.a2a_client import fetch_agent_card, message_agent
 from app.config import PUBLIC_BASE_URL
@@ -929,5 +934,5 @@ def create_tools(agent_id: str, db_path: str | Path) -> list:
         schedule_task,
         describe_mssql_schema,
         query_mssql,
-        google_search,
+        *([google_search] if google_search is not None else []),
     ]

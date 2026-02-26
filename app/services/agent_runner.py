@@ -77,7 +77,20 @@ def get_or_create_runner(
                 conn.close()
             except Exception:
                 pass
-        agent = create_personal_agent(agent_id, display_name=display_name, tools=tools, extra_instructions=extra)
+        # Load enabled skills as callable tools (so tool events appear in chat UI)
+        from .skill_service import create_skill_tools
+        skill_tools = create_skill_tools(agent_id, db_path)
+        all_tools = tools + skill_tools
+        # Build info list for the agent's system prompt
+        skill_tools_info = []
+        for t in skill_tools:
+            doc = t.__doc__ or ""
+            # Extract skill name from docstring: "Retrieve the '{name}' skill..."
+            parts = doc.split("'")
+            skill_name = parts[1] if len(parts) > 1 else t.__name__
+            skill_tools_info.append((skill_name, t.__name__))
+
+        agent = create_personal_agent(agent_id, display_name=display_name, tools=all_tools, extra_instructions=extra, skill_tools_info=skill_tools_info)
 
         runners[agent_id] = AgentRunnerService(agent, app_name="ai_social")
         logger.info("Created runner for agent '%s'", agent_id)
